@@ -189,12 +189,12 @@ end($PeiSong);
 			foreach ($arrTel as $zzkey => $zzvalue) {
 				$thisVillageGoods = $thisVillageGoods . $PeiSong[$zzvalue]['goods'] . ';'; //把所有的商品信息弄到一起
 			}
-			$ListSumOrder = explode(";", $thisVillageGoods);
-			array_pop($ListSumOrder); //数组多了一行
+			$ListSumOrder = explode(";", $thisVillageGoods, -1);
 			$sumListOrder = array();
 			foreach ($ListSumOrder as $LSkey => $LSvalue) {
-				preg_match("/\((\d+)件\)/", $LSvalue, $vNum); //匹配出数字
-				$sum_goods = preg_replace("/\((\d+)件\)/", '', $LSvalue); //去掉数字
+				$pattern = '/\((\d+)件\)/';
+				preg_match($pattern, $LSvalue, $vNum); //匹配出数字
+				$sum_goods = preg_replace($pattern, '', $LSvalue); //去掉数字
 				$sumListOrder[$sum_goods] = $sumListOrder[$sum_goods] + $vNum[1]; //数字进行相加
 			}
 
