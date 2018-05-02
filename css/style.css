@@ -1,0 +1,30 @@
+<style type="text/css">
+    body { font-size: 12px; }
+    table { border-collapse: collapse; width:100%; font-size: 18px;}
+    table, th, td { border: 1px solid black; }
+    table td { padding: 4px; }
+    .hr { margin-top: 1%; border-bottom: 3px double black; }
+    h2 { text-align: center; padding: 0; margin: 0; line-height: 10px; font-size: 20px; }
+    h3 { font-size: 16px; line-height: 25px; margin: 0; padding: 0; }
+    .t { margin-top: 20%; }
+    .h td { font-weight: bold; }
+    h3 span { padding-right: 20px; padding-left: 20px; font-weight: normal; }
+    h4 { line-height: 30px; margin: 0;  font-size: 1.5em; }
+    h4 span { font-weight: normal; }
+    .oid{font-size: 9px; color: gray; float: right;}
+    .split { page-break-after: always; }
+    .foot { font-size: 18px; font-family: 微软雅黑; width: 95%; padding-top: 30px; clear: both; }
+    .list { border: 2px solid black; break-inside: avoid; box-sizing: border-box; padding: 5px; margin: 5px 0; }
+    .list:first-child { margin-top: 0; }
+    .list ul { width: 90%; }
+    .list li { width: 100% }
+    .list li span { float: right; font-weight: bold; }
+    .thead { text-align: left; }
+    .thead p{ line-height: 1em;padding: 0; margin: 0; }
+    .r { margin-left: 4em; }
+    .masonry { column-count: 2; column-gap: 3; margin: 1em 0; display: block; clear: both; }
+    .sumOrder { border: 2px 0; border-style: dotted; border-color: red; }
+    .sumOrder li { float: left; height: 1.9em; width: 40%; font-size: 1.2em; padding: 0 1%; margin: 0 2%; border-bottom: 1px dashed #515151; }
+    .sumOrder li span { float: right; }
+	.red{color:red; font-weight:bold; font-size: 1.2em;}
+</style>
