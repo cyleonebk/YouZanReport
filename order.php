@@ -5,7 +5,7 @@
 <?php
 header('Content-Type:text/html; charset=utf-8');
 error_reporting(E_ALL ^ E_NOTICE);
-const debug = 1;
+const debug = 0;
 const SumBuyer = 0;
 
 ?>
@@ -101,7 +101,7 @@ if ($modeIs === true) {
 
 /*有赞的订单信息调用*/
 	require_once __DIR__ . '/lib/YZTokenClient.php';
-	$token = '40a62c38c8df320fbcdd53a0abbf2cd8'; //请填入商家授权后获取的access_token
+	$token = '2b7be829ebf93579a6b82779bc5a8928'; //请填入商家授权后获取的access_token
 	$client = new YZTokenClient($token);
 	$method = 'youzan.salesman.trades.account.get';
 	$api_version = '3.0.0';
