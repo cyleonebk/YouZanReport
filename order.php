@@ -4,8 +4,8 @@
 <head>
 <?php
 header('Content-Type:text/html; charset=utf-8');
-error_reporting(E_ALL ^ E_NOTICE);
-const debug = 0;
+//error_reporting(E_ALL ^ E_NOTICE);
+const debug = 1;
 const SumBuyer = 0;
 
 ?>
@@ -171,8 +171,7 @@ if ($modeIs === true) {
 <?php
 end($PeiSong);
 	$key_last = key($PeiSong);
-
-	$daguode = array();
+	$thisVillage = '';
 	foreach ($PeiSong as $key => $value) {
 		if ($thisVillage != '' && $thisVillage != $value['head_village']) {
 			// 输出表格尾部
@@ -195,7 +194,8 @@ end($PeiSong);
 				$pattern = '/\((\d+)件\)/';
 				preg_match($pattern, $LSvalue, $vNum); //匹配出数字
 				$sum_goods = preg_replace($pattern, '', $LSvalue); //去掉数字
-				$sumListOrder[$sum_goods] = $sumListOrder[$sum_goods] + $vNum[1]; //数字进行相加
+				!isset($sumListOrder[$sum_goods]) && $sumListOrder[$sum_goods] = 0; //避免php提示做加法的时候数组没有key的错误
+				$sumListOrder["$sum_goods"] = $sumListOrder["$sum_goods"] + $vNum[1]; //数字进行相加
 			}
 
 			echoln("<div class='split'>");

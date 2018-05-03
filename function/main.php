@@ -31,7 +31,8 @@ function my_dir($dir) {
 function aryGbk2UTF8($aArray) {
 	foreach ($aArray as $key => $value) {
 		foreach ($value as $subkey => $subvalue) {
-			$aArray[$key][$subkey] = iconv('gbk', 'utf-8', $subvalue);
+			//	$aArray[$key][$subkey] = iconv('GBK//IGNORE', 'UTF-8', $subvalue);
+			$aArray[$key][$subkey] = mb_convert_encoding($subvalue, 'UTF-8', 'GBK');
 		}
 	}
 	return $aArray;
@@ -48,13 +49,8 @@ function arytrimKey($aArray, $akey) {
 function readCSV($pathandfile) {
 
 	$filename = "./csv/$pathandfile/" . my_dir("./csv/$pathandfile")[0];
-	$file = fopen($filename, 'r');
-	while ($data = fgetcsv($file)) {
-		$arrayfile[] = $data;
-	}
-
-	fclose($file);
-	$arrayfile = aryGBK2UTF8($arrayfile);
+	$csv = array_map('str_getcsv', file($filename)); //一行搞定读取csv
+	$arrayfile = aryGBK2UTF8($csv);
 	array_shift($arrayfile); //去掉表头
 
 	return $arrayfile;
