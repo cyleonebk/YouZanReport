@@ -31,7 +31,6 @@ function my_dir($dir) {
 function aryGbk2UTF8($aArray) {
 	foreach ($aArray as $key => $value) {
 		foreach ($value as $subkey => $subvalue) {
-			//	$aArray[$key][$subkey] = iconv('GBK//IGNORE', 'UTF-8', $subvalue);
 			$aArray[$key][$subkey] = mb_convert_encoding($subvalue, 'UTF-8', 'GBK');
 		}
 	}
